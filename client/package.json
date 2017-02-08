@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "powerbi-client": ">=2.0.0"
+    "powerbi-client": "^2.2.6"
   },
   "devDependencies": {},
   "scripts": {
