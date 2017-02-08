@@ -3,9 +3,9 @@
 const config = require("config");
 const powerbi = require("powerbi-api");
 const express = require("express");
-
 const njwt = require("nJwt");
 
+// create express
 const app = express();
 
 // CORS
@@ -28,8 +28,8 @@ app.get("/report", function(req, res) {
 
     // init
     var collection = "CarColorSample";
-    var workspaceId = "755358a1-b417-4f84-a3e1-1cd38662215a";
-    var reportId = "f0da1e29-4eca-467f-9204-135f9cffc963";
+    var workspaceId = config.get("workspaceId");
+    var reportId = config.get("reportId");
     var accessKey = config.get("accessKey");
 
     // generate access token
