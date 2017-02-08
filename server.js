@@ -3,7 +3,7 @@
 const config = require("config");
 const powerbi = require("powerbi-api");
 const express = require("express");
-const njwt = require("nJwt");
+const njwt = require("njwt");
 
 // create express
 const app = express();
