@@ -25,11 +25,12 @@ app.get("/", function(req, res) {
 
 // return the report configuration
 app.get("/report", function(req, res) {
+    const id = req.query.id || 1;
 
     // init
     var collection = "CarColorSample";
     var workspaceId = config.get("workspaceId");
-    var reportId = config.get("reportId");
+    var reportId = config.get("reportId-" + id);
     var accessKey = config.get("accessKey");
 
     // generate access token
