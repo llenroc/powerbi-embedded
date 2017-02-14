@@ -26,19 +26,21 @@ app.get("/", function(req, res) {
 // return the report configuration
 app.get("/report", function(req, res) {
     const id = req.query.id || 1;
+    const user = req.query.user;
 
     // init
-    var collection = "CarColorSample";
-    var workspaceId = config.get("workspaceId");
-    var reportId = config.get("reportId-" + id);
-    var accessKey = config.get("accessKey");
+    const collection = "CarColorSample";
+    const workspaceId = config.get("workspaceId");
+    const reportId = config.get("reportId-" + id);
+    const accessKey = config.get("accessKey");
 
     // generate access token
-    var token = powerbi.PowerBIToken.createReportEmbedToken(collection, workspaceId, reportId);
-    var jwt = token.generate(accessKey);
+    const _ = undefined;
+    const token = powerbi.PowerBIToken.createReportEmbedToken(collection, workspaceId, reportId, _, _, user);
+    const jwt = token.generate(accessKey);
 
     // generate response
-    var response = {
+    const response = {
         type: "report",
         accessToken: jwt,
         id: reportId,
